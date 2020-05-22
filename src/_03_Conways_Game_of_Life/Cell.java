@@ -40,7 +40,7 @@ if(numNeighbors >3) {
 }
 		}else {
 			if(numNeighbors== 3) {
-				
+				isAlive=true;
 			}
 		}
 	}
@@ -60,11 +60,16 @@ if(numNeighbors >3) {
 	public void draw(Graphics g) {
 	
 		if(isAlive ==true) {
-			g.setColor(Color.green);
+			g.setColor(Color.red);
 			g.fillRect(x, y, cellSize, cellSize);
-		}else if(isAlive==false) {
 			g.setColor(Color.black);
 			g.drawRect(x, y, cellSize, cellSize);
+		}else if(isAlive==false) {
+			g.setColor(Color.LIGHT_GRAY);
+			g.fillRect(x, y, cellSize, cellSize);
+			g.setColor(Color.black);
+			g.drawRect(x, y, cellSize, cellSize);
+			
 		}
 		
 		

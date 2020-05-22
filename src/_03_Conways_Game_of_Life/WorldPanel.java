@@ -195,18 +195,17 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 		// the isAlive variable for that cell.
 for (int i = 0; i < cells.length; i++) {
 	for (int j = 0; j < cells[i].length; j++) {
-		cells[i][j].getX();
-		cells[i][j].getY();
+		
 		if(cells[i][j].getX()<e.getX()&&(cells[i][j].getX()+cellSize)>e.getX() && cells[i][j].getY()<e.getY()&&(cells[i][j].getY()+cellSize)>e.getY()) {
-			
+			if(cells[i][j].isAlive==true) {
+				cells[i][j].isAlive=false;
+			}else if(cells[i][j].isAlive==false) {
+				cells[i][j].isAlive=true;
+			}
 		}
 	}
 }
-if(cells[e.getX()][e.getY()].isAlive==true) {
-	cells[e.getX()][e.getY()].isAlive= false;
-}else if(cells[e.getX()][e.getY()].isAlive==false) {
-	cells[e.getX()][e.getY()].isAlive=true;
-}
+
 
 
 		repaint();
