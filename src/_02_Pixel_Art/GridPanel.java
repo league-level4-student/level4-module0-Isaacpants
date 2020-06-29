@@ -4,10 +4,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.io.Serializable;
 
 import javax.swing.JPanel;
 
-public class GridPanel extends JPanel{
+public class GridPanel extends JPanel implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private int windowWidth;
@@ -38,9 +39,9 @@ public class GridPanel extends JPanel{
 		pixels = new Pixel[rows][cols];
 		
 		//3. Iterate through the array and initialize each element to a new pixel.
-		for (int i = 0; i < pixels.length; i++) {
-			for (int j = 0; j < pixels[i].length; j++) {
-				pixels[i][j] = new Pixel(i*pixelWidth,j*pixelHeight);
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				pixels[i][j] = new Pixel(i,j);
 			}
 		}
 		

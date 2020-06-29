@@ -1,19 +1,21 @@
 package _02_Pixel_Art;
 
+import java.io.Serializable;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class GridInputPanel extends JPanel{
+public class GridInputPanel extends JPanel implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private JTextField windowWidthField;
 	private JTextField windowHeightField;
 	private JTextField rowsField;
 	private JTextField colsField;
 	private JButton submitButton;
-			
+	
 	PixelArtMaker pam;
 	
 	public GridInputPanel(PixelArtMaker pam) {
@@ -24,6 +26,7 @@ public class GridInputPanel extends JPanel{
 		rowsField = new JTextField(5);
 		colsField = new JTextField(5);
 		submitButton = new JButton("Submit");
+		
 		
 		add(new JLabel("screen width:"));
 		add(windowWidthField);
